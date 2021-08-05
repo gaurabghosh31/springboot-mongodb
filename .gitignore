@@ -1,0 +1,9 @@
+/.gradle/
+/.settings/
+.apt_generated
+.classpath
+.factorypath
+.project
+/build/
+/bin/
+/.vscode/
