@@ -26,7 +26,7 @@ public class GlobalExceptionHandler {
 	public ResponseEntity<BaseModel> handleBootcampExceptions(final BootcampException ex, final HttpServletRequest req){
 		if(StringUtils.isNotBlank(ex.getMessage())) {
 			MessageModel message = getMessage(ex.getMessage(), ex.getValues());
-			ResponseModel response = new ResponseModel(BootcampConstants.STATUS_FAILURE,message.getCode(),Collections.singletonList(message.getMessage()),message);
+			ResponseModel response = new ResponseModel(BootcampConstants.STATUS_FAILURE,message.getCode(),Collections.singletonList(message.getMessage()),null);
 			return new ResponseEntity<>(response, ex.getHttpStatus());
 		}
 		return null;

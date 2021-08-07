@@ -15,7 +15,9 @@ public class BootcampService {
 	private BootcampRepository bootcampRepository;
 
 	public BootcampsModel getAllBootcamps() {
-		return (BootcampsModel) bootcampRepository.findAll();
+		final BootcampsModel Bootcamps = new BootcampsModel();
+		Bootcamps.setBootcamps(bootcampRepository.findAll());
+		return Bootcamps;
 	}
 
 	public BootcampModel getBootcampById(String id) {
